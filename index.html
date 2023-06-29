@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework 1</title>
+    <style>
+    body {
+        background: rgb(0, 0, 0);
+    }  
+    </style>
 </head>
-<body>
-    
+
+<body id="body">
+    <section>
+        <button id="red">Make it red</button>
+        <button id="green">Make it green</button>
+        <button id="blue">Make it blue</button>
+    </section>
+    <script>
+        const red = document.getElementById('red');
+        const green = document.getElementById('green');
+        const blue = document.getElementById('blue');
+        const body = document.getElementById('body');
+        let rgb = [0, 0, 0];
+
+        red.onclick = function () {
+        rgb[0] += 10;
+        body.style.background = `rgb(${rgb.join(',')})`;
+        }
+
+        green.onclick = function () {
+        rgb[1] += 10;
+        body.style.background = `rgb(${rgb.join(',')})`;
+        }
+
+        blue.onclick = function () {
+        rgb[2] += 10;
+        body.style.background = `rgb(${rgb.join(',')})`;
+        }
+    </script>
+
+    <!-- <script>
+
+        SKYPRO SOLUTION
+
+        const red = document.getElementById('red');
+        const green = document.getElementById('green');
+        const blue = document.getElementById('blue');
+
+        const hexArr = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+        let indexRed = 0;
+        let indexGreen = 0;
+        let indexBlue = 0;
+
+        red.onclick = function () {
+            if (indexRed < hexArr.length - 1) {
+                indexRed++;
+                document.body.style.backgroundColor = `#${hexArr[indexRed]}00`;
+            }
+        }
+
+        green.onclick = function () {
+            if (indexGreen < hexArr.length - 1) {
+                indexGreen++;
+                document.body.style.backgroundColor = `#0${hexArr[indexGreen]}0`;
+            }
+        }
+
+        blue.onclick = function () {
+            if (indexBlue < hexArr.length - 1) {
+                indexBlue++;
+                document.body.style.backgroundColor = `#00${hexArr[indexBlue]}`;
+            }
+        }
+
+
+    </script> -->
+
 </body>
+
 </html>
